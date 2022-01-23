@@ -1,8 +1,6 @@
 public class Rectangle {
-    
     private int m_length;
     private int m_width;
-
     private String m_null = " ";
     private String m_dash = "-";
     
