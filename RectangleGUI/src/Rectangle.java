@@ -9,14 +9,10 @@ public class Rectangle {
     public Rectangle(int length, int width) {
         this.m_length = length;
         this.m_width = width;
-        
-        Area();
-
-        DrawGUI();
     }
 
-    private void Area() {
-        System.out.println(m_length * m_width);
+    public void Area() {
+        System.out.println("Area: " + m_length * m_width);
     }
 
     public void DrawGUI() {
