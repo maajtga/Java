@@ -15,7 +15,7 @@ public class Rectangle {
 
     public void DrawGUI() {
         System.out.println("*" + m_dash.repeat(m_length) + "*");
-        for (int i = 0; i < m_width; i++)
+        for (int i = 0; i < m_width; i++) 
             System.out.println("|" + m_null.repeat(m_width) + "|");
         System.out.println("*" + m_dash.repeat(m_length) + "*");
     } 
