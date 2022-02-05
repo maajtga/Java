@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.InvertType;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -13,6 +15,18 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static final int MOTOR_PORT_RIGHT = 0;
-    public static final int MOTOR_PORT_LEFT = 1;
+    public static final int[] MOTOR_PORTS_RIGHT = {1, 2};
+    public static final int[] MOTOR_PORTS_LEFT = {3, 4};
+
+    public static final int JOYSTICK_PORT_LEFT = 0; 
+    public static final int JOYSTICK_PORT_RIGHT = 1;
+    public static final int XBOX_PORT = 2;
+
+    public static final float JOYSTICK_RIGHT_DEADZONE_Y = 0.02f;
+    public static final float JOYSTICK_LEFT_DEADZONE_Y = 0.02f;
+
+    public static final boolean LEFT_INVERTED = true;
+    public static boolean RIGHT_INVERTED = false;
+
+    public static double RAMP_RATE = 0;
 }
