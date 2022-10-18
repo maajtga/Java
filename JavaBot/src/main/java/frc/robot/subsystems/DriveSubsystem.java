@@ -8,17 +8,21 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 
-import edu.wpi.first.wpilibj.motorcontrol.Talon;
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class DriveSubsystem extends SubsystemBase {
   private TalonSRX talonLeft, talonRight;
   private VictorSPX[] victorsLeft, victorsRight;
+  private AnalogGyro m_gyro;
   
     /** Creates a new DriveSubsystem. */
   public DriveSubsystem() 
   {
+    
+    m_gyro.calibrate();
+    
     talonLeft = new TalonSRX(Constants.MOTOR_PORTS_LEFT[0]);
     talonRight = new TalonSRX(Constants.MOTOR_PORTS_RIGHT[0]);
  
@@ -31,7 +35,7 @@ public class DriveSubsystem extends SubsystemBase {
  
     talonLeft.configOpenloopRamp(Constants.RAMP_RATE);
     talonRight.configOpenloopRamp(Constants.RAMP_RATE);
- 
+  
     victorsLeft = new VictorSPX[Constants.MOTOR_PORTS_LEFT.length - 1];
     for (int i = 1; i < Constants.MOTOR_PORTS_LEFT.length; i++) {
       victorsLeft[i-1] = new VictorSPX(Constants.MOTOR_PORTS_LEFT[i]);
@@ -62,15 +66,25 @@ public class DriveSubsystem extends SubsystemBase {
 
   public void setBothMotors(double speed) 
   {
-    setLeftMotor(speed);
     setRightMotor(speed);
+    setLeftMotor(speed);
+  }
+  
+  public void setBothMotors(double right_speed, double left_speed) 
+  {
+    setRightMotor(right_speed);
+    setLeftMotor(left_speed);
+  }
+  
+  public double getAngle() 
+  {
+    return m_gyro.getAngle();
   }
 
-  public void moveRight()
-  {}
-
-  public void moveLeft()
-  {}
+  public void resetGyro() 
+  {
+    m_gyro.reset();
+  }
 
   @Override
   public void periodic() {

@@ -8,8 +8,6 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 public class DriveCommand extends CommandBase {
   
     private final DriveSubsystem m_subsystem;
-    private final Input m_input = new Input();
-    private float m_speed = 0.0f;
 
     public DriveCommand(DriveSubsystem subsystem) {
       m_subsystem = subsystem;
@@ -28,8 +26,8 @@ public class DriveCommand extends CommandBase {
     @Override
     public void execute() 
     {
-      m_subsystem.setRightMotor(m_input.getJoystickRightY());
-      m_subsystem.setLeftMotor(m_input.getJoystickLeftY());
+      //m_subsystem.setRightMotor(Input.getRightAxisX());
+      //m_subsystem.setLeftMotor(Input.getJoystickLeftY());
     }
   
     // Called once the command ends or is interrupted.
