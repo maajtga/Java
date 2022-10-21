@@ -54,6 +54,14 @@ public class Input extends SubsystemBase {
     return Controller.getLeftBumperPressed();
   }
 
+  public static double getRightTriggerAxis() {
+    return Controller.getRightTriggerAxis();
+  }
+
+  public static double getLeftTriggerAxis() {
+    return Controller.getLeftTriggerAxis();
+  }
+
   public static double getRightAxisX() {
     return Controller.getRightX();
   }

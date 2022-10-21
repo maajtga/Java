@@ -86,6 +86,23 @@ public class DriveSubsystem extends SubsystemBase {
     m_gyro.reset();
   }
 
+// DRIVE SYSTEMS/TRAINS ///
+
+  public void RLDrive(double fSpeed, double tSpeed) {
+    // Curve throttle speed?????
+    fSpeed = (Math.pow(2, fSpeed) - 1);
+
+    // Calculate turn power
+    double turnPower = tSpeed * fSpeed;
+
+    double rPower = fSpeed - turnPower;
+    double lPower = fSpeed + turnPower;
+
+    setBothMotors(rPower, lPower);
+  }
+
+///////////////////////////
+
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
