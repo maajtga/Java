@@ -17,13 +17,15 @@ public final class Constants {
     public static final int[] MOTOR_PORTS_RIGHT = {1, 2};
     public static final int[] MOTOR_PORTS_LEFT = {3, 4};
 
-
-    // Gio's Idea, remove need for joysticks
+    // GIO's idea to remove joysticks, Rocket League drive controls?
     //public static final int JOYSTICK_PORT_LEFT = 0; 
     //public static final int JOYSTICK_PORT_RIGHT = 1;
     public static final int XBOX_PORT = 2;
 
+    public static final float JOYSTICK_RIGHT_DEADZONE_X = 0.02f;
     public static final float JOYSTICK_RIGHT_DEADZONE_Y = 0.02f;
+
+    public static final float JOYSTICK_LEFT_DEADZONE_X = 0.02f;
     public static final float JOYSTICK_LEFT_DEADZONE_Y = 0.02f;
 
     public static final boolean LEFT_INVERTED = true;

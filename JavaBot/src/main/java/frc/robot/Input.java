@@ -25,6 +25,14 @@ public class Input extends SubsystemBase {
   // return (Math.abs(joyRight.getY()) < Constants.JOYSTICK_RIGHT_DEADZONE_Y ? 0: joyRight.getY());
   //}
 
+  public static double setDeadzone(double input, double zone) {
+    if (Math.abs(input) > Math.abs(zone)) {
+      return input;
+    } else {
+      return 0;
+    }
+  }
+
   public static boolean getButtonA() 
   {
     return Controller.getAButton();

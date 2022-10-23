@@ -89,7 +89,7 @@ public class DriveSubsystem extends SubsystemBase {
 // DRIVE SYSTEMS/TRAINS ///
 
   public void RLDrive(double fSpeed, double tSpeed) {
-    // Curve throttle speed?????
+    // Curve throttle speed????? // FIGURE THIS OUT LATER //
     fSpeed = (Math.pow(2, fSpeed) - 1);
 
     // Calculate turn power

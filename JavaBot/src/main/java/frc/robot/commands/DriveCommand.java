@@ -28,6 +28,7 @@ public class DriveCommand extends CommandBase {
     {
       //m_subsystem.setRightMotor(Input.getRightAxisX());
       //m_subsystem.setLeftMotor(Input.getJoystickLeftY());
+      m_subsystem.RLDrive(Input.getRightTriggerAxis(), Input.setDeadzone(Input.getLeftAxisX(), Constants.JOYSTICK_LEFT_DEADZONE_X));
     }
   
     // Called once the command ends or is interrupted.
