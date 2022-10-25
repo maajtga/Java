@@ -90,7 +90,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   public void RLDrive(double fSpeed, double tSpeed) {
     // Curve throttle speed????? // FIGURE THIS OUT LATER //
-    fSpeed = (Math.pow(2, fSpeed) - 1);
+    fSpeed = Math.pow(fSpeed, 3);
 
     // Calculate turn power
     double turnPower = tSpeed * fSpeed;
@@ -99,6 +99,15 @@ public class DriveSubsystem extends SubsystemBase {
     double lPower = fSpeed + turnPower;
 
     setBothMotors(rPower, lPower);
+  }
+
+  public void TankDrive(double rSpeed, double lSpeed) {
+    setBothMotors(rSpeed, lSpeed);
+  }
+
+  public void ArcadeDrive(double fSpeed, double tSpeed) {
+    setRightMotor(fSpeed - tSpeed);
+    setLeftMotor(fSpeed + tSpeed);
   }
 
 ///////////////////////////
